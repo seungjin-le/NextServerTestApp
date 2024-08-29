@@ -1,3 +1,5 @@
+import Providers from "@/app/providers";
+
 export const metadata = {
   title: "Home",
   description: "Welcome to Next.js",
@@ -6,7 +8,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
