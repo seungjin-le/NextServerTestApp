@@ -12,8 +12,6 @@
   "embeddedLanguageFormatting" : "auto",
   "proseWrap" : "preserve",
   "endOfLine" : "auto",
-  "bracketSpacing" : true,
-  "tsdoc" : true
-
+  "bracketSpacing" : true
 }
  
