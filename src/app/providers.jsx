@@ -2,7 +2,8 @@
 
 // QueryClientProvider가 내부적으로 useContext를 사용하기 때문에 'use client'를 맨 위에 추가.
 import { isServer, QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { SessionProvider } from "next-auth/react";
 function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
@@ -37,5 +38,11 @@ export default function Providers({ children }) {
   //       버리기 때문입니다.
   const queryClient = getQueryClient();
 
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
+  return (
+    <SessionProvider>
+      <QueryClientProvider client={queryClient}>
+        {children} <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </SessionProvider>
+  );
 }
