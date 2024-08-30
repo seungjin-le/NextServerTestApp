@@ -1,16 +1,21 @@
+import { dehydrate, HydrationBoundary, QueryClient, useQuery } from "@tanstack/react-query";
+import Index from "./index";
+
 export async function serverSide() {
   return (await fetch("http://localhost:3000/api/user")).json();
 }
 
 export default async function Page() {
-  const { data } = await serverSide();
+  const queryClient = new QueryClient();
 
-  console.log(data);
-  console.log(data.data);
+  await queryClient.prefetchQuery({
+    queryKey: ["posts"],
+    queryFn: () => serverSide(),
+  });
 
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-between p-24 `}>
-      {data && `${data.data.name} ${data.data.email}`}
-    </main>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Index />
+    </HydrationBoundary>
   );
 }

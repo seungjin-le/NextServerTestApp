@@ -2,21 +2,14 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
   console.log(request);
-  return NextResponse.json(
-    {
-      data: {
-        massage: "massage",
-        status: 200,
-        data: {
-          name: "John Doe",
-          email: "john@doe.com",
-        },
-      },
+  return NextResponse.json({
+    massage: "massage",
+    status: 200,
+    data: {
+      name: "John Doe",
+      email: "john@doe.com",
     },
-    {
-      status: 200,
-    }
-  );
+  });
 }
 
 export async function PATCH(request) {

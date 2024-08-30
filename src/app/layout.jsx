@@ -1,4 +1,5 @@
 import Providers from "@/app/providers";
+import "@/styles/tailwind.css";
 
 export const metadata = {
   title: "Home",
@@ -7,8 +8,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
-      <body>
+    <html lang="ko" className="w-full h-full">
+      <body className="bg-gray-500 w-full h-full">
         <Providers>{children}</Providers>
       </body>
     </html>
