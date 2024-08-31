@@ -13,8 +13,8 @@ api.defaults.headers.common["Content-Type"] = "application/json";
 
 api.interceptors.request.use(async (config) => {
   const session = await getSession();
-  if (session && session.token) {
-    config.headers["Authorization"] = `Bearer ${session.token}`;
+  if (session && session?.accessToken) {
+    config.headers["Authorization"] = `Bearer ${session?.accessToken}`;
   }
   return config;
 });
