@@ -1,7 +1,8 @@
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+
 import { getServerSession } from "next-auth/next";
 import Index from "./index";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 import api from "@/utils/api";
 
 export async function serverSide() {

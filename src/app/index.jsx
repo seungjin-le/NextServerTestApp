@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { serverSide } from "./page";
 import { signIn } from "next-auth/react";
+import React from "react";
 
 const Index = () => {
   const { data } = useQuery({

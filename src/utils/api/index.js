@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getSession } from "next-auth/react";
+// import { getSession } from "next-auth/react";
 
 const api = axios.create({
   withCredentials: true,
@@ -12,10 +12,6 @@ if (process.env.NODE_ENV !== "development") {
 api.defaults.headers.common["Content-Type"] = "application/json";
 
 api.interceptors.request.use(async (config) => {
-  const session = await getSession();
-  if (session && session?.accessToken) {
-    config.headers["Authorization"] = `Bearer ${session?.accessToken}`;
-  }
   return config;
 });
 
@@ -28,7 +24,6 @@ api.interceptors.response.use(
   async (err) => {
     if (err.response?.status === 419) {
       // 중단된 요청 (에러난 요청)을 새로운 토큰으로 재전송
-      const session = await getSession();
     }
     return Promise.reject(err);
   }
