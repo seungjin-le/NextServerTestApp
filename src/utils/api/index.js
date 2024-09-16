@@ -5,10 +5,6 @@ const api = axios.create({
   withCredentials: true,
 });
 
-if (process.env.NODE_ENV !== "development") {
-  api.defaults.baseURL = process.env.PUBLIC_URL;
-}
-
 api.defaults.headers.common["Content-Type"] = "application/json";
 
 api.interceptors.request.use(async (config) => {
@@ -17,8 +13,6 @@ api.interceptors.request.use(async (config) => {
 
 api.interceptors.response.use(
   (res) => {
-    if (!(res.status === 200 || res.status === 201 || res.status === 204)) throw new Error();
-    if (res.data.errors) throw new Error(res.data.errors);
     return res;
   },
   async (err) => {

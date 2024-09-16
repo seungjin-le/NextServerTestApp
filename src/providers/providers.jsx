@@ -5,7 +5,7 @@ import { isServer, QueryClient, QueryClientProvider } from "@tanstack/react-quer
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { SessionProvider } from "next-auth/react";
 import React from "react";
-function makeQueryClient() {
+const makeQueryClient = () => {
   return new QueryClient({
     defaultOptions: {
       queries: {
@@ -15,7 +15,7 @@ function makeQueryClient() {
       },
     },
   });
-}
+};
 
 let browserQueryClient = undefined;
 
