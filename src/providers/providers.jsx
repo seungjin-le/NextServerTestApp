@@ -5,6 +5,7 @@ import { isServer, QueryClient, QueryClientProvider } from "@tanstack/react-quer
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { SessionProvider } from "next-auth/react";
 import React from "react";
+
 const makeQueryClient = () => {
   return new QueryClient({
     defaultOptions: {
@@ -33,14 +34,14 @@ function getQueryClient() {
   }
 }
 
-export default function Providers({ children }) {
+export default function Providers({ children, session }) {
   // 주의: query client를 초기화할 때 useState를 피하세요.
   //       suspense 경계가 없으면 React가 초기 렌더링 시 클라이언트를
   //       버리기 때문입니다.
   const queryClient = getQueryClient();
 
   return (
-    <SessionProvider>
+    <SessionProvider session={session}>
       <QueryClientProvider client={queryClient}>
         {children} <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>

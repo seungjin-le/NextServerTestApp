@@ -1,7 +1,6 @@
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 
 import Index from "./index";
-
 import api from "@/utils/api";
 
 export async function serverSide() {

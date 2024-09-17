@@ -5,23 +5,20 @@ import api from "@/utils/api";
 export const authOptions = {
   providers: [
     CredentialsProvider({
-      name: "Credentials",
-      credentials: {
-        email: { label: "Email", type: "text" },
-        password: { label: "Password", type: "password" },
-      },
       authorize: async (credentials, req) => {
-        // 사용자 인증 로직
-        const user = { email: credentials.email, password: credentials.password };
         try {
-          console.log(user);
-          const res = await api.post("http://localhost:3000/api/v1/auth/login", user);
-          console.log(res);
+          console.log("credentials", credentials);
+          const data = {
+            email: credentials.email,
+            password: credentials.password,
+          };
+          // 사용자 인증 로직
+          const res = await api.post("/auth/login", data);
+          console.log("res", res);
+          return res;
         } catch (error) {
-          // console.log(error);
+          return null;
         }
-
-        return res.data;
       },
     }),
   ],
@@ -32,16 +29,24 @@ export const authOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      return true;
+    },
+    async redirect({ url, baseUrl }) {
+      return baseUrl;
+    },
     async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
+      if (user) token.id = user.id;
       return token;
     },
     async session({ session, token }) {
-      session.user.id = token.id;
-      return session;
+      if (token.user) session.user = token.user;
+      return Promise.resolve(session);
     },
+  },
+  pages: {
+    signIn: "/",
+    error: "/",
   },
 };
 
