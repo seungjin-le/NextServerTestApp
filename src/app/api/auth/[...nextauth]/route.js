@@ -7,14 +7,13 @@ export const authOptions = {
     CredentialsProvider({
       authorize: async (credentials, req) => {
         try {
-          console.log("credentials", credentials);
           const data = {
             email: credentials.email,
             password: credentials.password,
           };
           // 사용자 인증 로직
           const res = await api.post("/auth/login", data);
-          console.log("res", res);
+
           return res;
         } catch (error) {
           return null;

@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
+  console.log(request);
   const response = {
     status: 200,
     data: {
-      accessToken: "accessToken",
+      accessToken: "accessTokensadfasdfasdfasdfasdf",
     },
   };
 
-  return NextResponse.json("Hello, Next.js!", response);
+  return NextResponse.json(response);
 }
