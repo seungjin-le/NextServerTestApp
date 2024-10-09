@@ -5,7 +5,7 @@ import { serverSide } from "./page";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import React from "react";
-import api from "@/utils/api";
+
 import axios from "axios";
 
 const Index = () => {
