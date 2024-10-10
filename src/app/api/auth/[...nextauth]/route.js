@@ -5,7 +5,8 @@ import api from "@/utils/api";
 export const authOptions = {
   providers: [
     CredentialsProvider({
-      authorize: async (credentials, req) => {
+      name: "Credentials",
+      async authorize(credentials, req) {
         try {
           const data = {
             email: credentials.email,
