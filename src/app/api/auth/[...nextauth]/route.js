@@ -6,7 +6,7 @@ export const authOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
-      async authorize(credentials, req) {
+      authorize: async (credentials) => {
         try {
           const data = {
             email: credentials.email,
@@ -24,7 +24,7 @@ export const authOptions = {
   ],
   session: {
     jwt: true,
-    strategy: "test_jwt",
+    strategy: "jwt",
     secureCookie: true,
   },
   secret: process.env.NEXTAUTH_SECRET,
