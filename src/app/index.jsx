@@ -23,7 +23,6 @@ const Index = () => {
         password,
       },
     });
-    console.log(res);
   };
 
   return (
