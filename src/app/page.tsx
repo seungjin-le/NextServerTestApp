@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 import Index from "./index";
 import api from "@/utils/api";
+import Loading from "./loading";
 
 export async function serverSide() {
   return await api.get("http://localhost:3001/api/v1/user").then((res) => res.data);
@@ -12,12 +13,14 @@ export default async function Page() {
 
   await queryClient.prefetchQuery({
     queryKey: ["posts"],
-    queryFn: () => serverSide(),
+    queryFn: serverSide,
   });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Index />
+      <Suspense fallback={<Loading />}>
+        <Index />
+      </Suspense>
     </HydrationBoundary>
   );
 }

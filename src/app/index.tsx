@@ -1,10 +1,10 @@
 "use client";
 
+import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { serverSide } from "./page";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
-import React from "react";
 
 import axios from "axios";
 
