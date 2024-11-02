@@ -4,9 +4,9 @@ export async function POST(request) {
   const response = {
     status: 200,
     data: {
-      accessToken: "accessTokensadfasdfasdfasdfasdf",
+      accessToken: "",
     },
   };
 
-  return NextResponse.json(response);
+  return NextResponse.json(response);  
 }
