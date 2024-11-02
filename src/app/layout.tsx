@@ -9,7 +9,7 @@ export const metadata = {
   description: "Welcome to Next.js",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const session = getServerSession(authOptions);
 
   return (

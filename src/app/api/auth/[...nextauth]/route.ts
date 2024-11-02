@@ -29,7 +29,7 @@ export const authOptions: AuthOptions = {
 
           return res.data;
         } catch (error) {
-          return null;
+          return null;         
         }
       },
     }),
@@ -42,7 +42,7 @@ export const authOptions: AuthOptions = {
     async decode(params: JWTDecodeParams): Promise<JWT> {
       return {};
     },
-  }
+  },
   session: {
     jwt: true,
     strategy: "jwt",
