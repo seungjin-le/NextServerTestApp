@@ -13,14 +13,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const session = getServerSession(authOptions);
 
   return (
-    <html lang="ko" className="w-full h-full">
-      <body className="bg-gray-500 w-full h-full">
+    <html lang="ko" className="size-full" >
+      <body className="bg-gray-500 size-full">
         <Providers session={session}>
           <div className="flex flex-col bg-blue-500">
             <div>Root Layout</div>
             {children}
           </div>
-        </Providers>
+        </Providers>  
       </body>
     </html>
   );

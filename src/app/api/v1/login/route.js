@@ -6,7 +6,8 @@ export async function POST(request) {
     data: {
       accessToken: "",
     },
-  };
+  }; 
 
   return NextResponse.json(response);  
 }
+    
