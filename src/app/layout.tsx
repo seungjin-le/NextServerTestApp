@@ -3,6 +3,9 @@ import React from "react";
 import { getServerSession } from "next-auth";
 import Providers from "@/providers/providers";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import Section from './contailer/Section';
+import Header from './contailer/Header';
+import Footer from './contailer/Footer';
 
 export const metadata = {
   title: "Home",
@@ -17,8 +20,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-gray-500 size-full min-h-[100dvh]">
         <Providers session={session}>
           <div className="flex flex-col bg-blue-500">
-            <div>Root Layout</div>
-            {children}
+            <Header />
+            <Section>{children}</Section>
+            <Footer />
           </div>
         </Providers>  
       </body>
