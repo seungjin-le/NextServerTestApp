@@ -27,6 +27,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@swc-jotai/react-refresh", "npm:0.2.0"],\
           ["@tanstack/react-query", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:5.59.20"],\
           ["@tanstack/react-query-devtools", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:5.59.20"],\
           ["@testing-library/jest-dom", "npm:6.6.3"],\
@@ -36,6 +37,7 @@ const RAW_RUNTIME_STATE =
           ["axios", "npm:1.7.7"],\
           ["jest", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jest-environment-jsdom", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
+          ["jotai", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2"],\
           ["next", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:15.0.2"],\
           ["next-auth", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:4.24.10"],\
           ["postcss", "npm:8.4.47"],\
@@ -1629,6 +1631,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@sinonjs/fake-timers", "npm:10.3.0"],\
           ["@sinonjs/commons", "npm:3.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@swc-jotai/react-refresh", [\
+      ["npm:0.2.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/@swc-jotai-react-refresh-npm-0.2.0-cbd9435ce4-10c0.zip/node_modules/@swc-jotai/react-refresh/",\
+        "packageDependencies": [\
+          ["@swc-jotai/react-refresh", "npm:0.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4271,6 +4282,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["jotai", [\
+      ["npm:2.10.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/jotai-npm-2.10.2-d7f42ca68c-10c0.zip/node_modules/jotai/",\
+        "packageDependencies": [\
+          ["jotai", "npm:2.10.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2", {\
+        "packageLocation": "./.yarn/__virtual__/jotai-virtual-ab98f1aa55/4/.yarn/berry/cache/jotai-npm-2.10.2-d7f42ca68c-10c0.zip/node_modules/jotai/",\
+        "packageDependencies": [\
+          ["jotai", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2"],\
+          ["@types/react", "npm:18.3.12"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["js-tokens", [\
       ["npm:4.0.0", {\
         "packageLocation": "../../../.yarn/berry/cache/js-tokens-npm-4.0.0-0ac852e9e2-10c0.zip/node_modules/js-tokens/",\
@@ -5761,6 +5794,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["server_test_app", "workspace:."],\
+          ["@swc-jotai/react-refresh", "npm:0.2.0"],\
           ["@tanstack/react-query", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:5.59.20"],\
           ["@tanstack/react-query-devtools", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:5.59.20"],\
           ["@testing-library/jest-dom", "npm:6.6.3"],\
@@ -5770,6 +5804,7 @@ const RAW_RUNTIME_STATE =
           ["axios", "npm:1.7.7"],\
           ["jest", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jest-environment-jsdom", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
+          ["jotai", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2"],\
           ["next", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:15.0.2"],\
           ["next-auth", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:4.24.10"],\
           ["postcss", "npm:8.4.47"],\

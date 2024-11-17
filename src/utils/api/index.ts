@@ -10,7 +10,7 @@ interface FetchOptions extends RequestInit {
 }
 
 export default async function serverFetch(url: string): Promise<Response | undefined> {
-  const session = await getServerSession(authOptions);
+  const session :any = await getServerSession(authOptions);
   const headers: HeadersInit = {
     "Content-Type": "application/json",
     'Authorization': `Bearer ${session?.accessToken}`

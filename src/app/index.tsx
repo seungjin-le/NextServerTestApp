@@ -3,26 +3,39 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { serverSide } from './page'
-import { useState } from 'react'
+import {  useHydrateAtoms } from 'jotai/utils';
+import { useAtom } from 'jotai';
+import countAtom from 'atom/countAtom'
+import darkModeAtom from  'atom/theme'
 
-import axios from 'axios'
 
-export default function Index() {
+
+export default function Index({count}: {count: number}) {
   const { data } = useQuery({
     queryKey: ['posts'],
     queryFn: () => serverSide()
   })
-  const [email, setEmail] = useState('asfdsafd')
-  const [password, setPassword] = useState('asfasffasd')
 
-  const handleLogin = async () => {
-    const res = await axios.post('/api/v1/login', {
-      data: {
-        email,
-        password
-      }
-    })
-  }
+  useHydrateAtoms([
+    [countAtom, count],
 
-  return <div></div>
+  ]);
+  const [counter, setCounter] = useAtom(countAtom);
+  const [mode, setMode] = useAtom(darkModeAtom);
+
+  return <div>
+    
+
+
+    <div className='w-full  text-center text-[20px] flex flex-row justify-center gap-[40px]'>
+    <div>
+    {counter}
+    </div>
+
+
+    <div>{mode ? 'dark' : 'light'}</div>
+    </div>
+    <button className='px-[20px] py-[20px]' onClick={() => setCounter(counter + 1)}>+</button>
+    <button className='px-[20px] py-[20px]' onClick={() => setMode(!mode)}>{mode ? 'dark' : 'light'}</button>
+  </div>
 }
