@@ -13,10 +13,9 @@ export default function Index({ count }: { count: number }) {
     queryKey: ['posts'],
     queryFn: () => serverSide()
   })
-
-  useHydrateAtoms([[countAtom, count]])
   const [counter, setCounter] = useAtom(countAtom)
   const [mode, setMode] = useAtom(darkModeAtom)
+  useHydrateAtoms([[countAtom, count]])
 
   return (
     <div>

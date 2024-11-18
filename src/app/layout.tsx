@@ -6,29 +6,26 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import Section from './contailer/Section'
 import Header from './contailer/Header'
 import Footer from './contailer/Footer'
-
-import { RenderingBoundary } from 'jotai-ssr'
+import { Session } from 'next-auth/core/types'
 
 export const metadata = {
   title: 'Home',
   description: 'Welcome to Next.js'
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const session = getServerSession(authOptions)
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const session: Session | null = await getServerSession(authOptions)
 
   return (
     <html lang="ko" className="size-full">
       <body className="bg-gray-500 size-full min-h-[100dvh]">
-        <RenderingBoundary>
-          <Providers session={session}>
-            <div className="flex flex-col bg-blue-500">
-              <Header />
-              <Section>{children}</Section>
-              <Footer />
-            </div>
-          </Providers>
-        </RenderingBoundary>
+        <Providers session={session as Session}>
+          <div className="flex flex-col bg-blue-500">
+            <Header />
+            <Section>{children}</Section>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   )

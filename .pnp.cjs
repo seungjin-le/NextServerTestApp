@@ -38,7 +38,6 @@ const RAW_RUNTIME_STATE =
           ["jest", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jest-environment-jsdom", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jotai", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2"],\
-          ["jotai-ssr", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:0.1.1"],\
           ["next", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:15.0.2"],\
           ["next-auth", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:4.24.10"],\
           ["postcss", "npm:8.4.47"],\
@@ -4305,32 +4304,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["jotai-ssr", [\
-      ["npm:0.1.1", {\
-        "packageLocation": "../../../.yarn/berry/cache/jotai-ssr-npm-0.1.1-b913167d10-10c0.zip/node_modules/jotai-ssr/",\
-        "packageDependencies": [\
-          ["jotai-ssr", "npm:0.1.1"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:0.1.1", {\
-        "packageLocation": "./.yarn/__virtual__/jotai-ssr-virtual-ac0c8055be/4/.yarn/berry/cache/jotai-ssr-npm-0.1.1-b913167d10-10c0.zip/node_modules/jotai-ssr/",\
-        "packageDependencies": [\
-          ["jotai-ssr", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:0.1.1"],\
-          ["@types/jotai", null],\
-          ["@types/react", "npm:18.3.12"],\
-          ["jotai", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2"],\
-          ["react", "npm:18.3.1"]\
-        ],\
-        "packagePeers": [\
-          "@types/jotai",\
-          "@types/react",\
-          "jotai",\
-          "react"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["js-tokens", [\
       ["npm:4.0.0", {\
         "packageLocation": "../../../.yarn/berry/cache/js-tokens-npm-4.0.0-0ac852e9e2-10c0.zip/node_modules/js-tokens/",\
@@ -5832,7 +5805,6 @@ const RAW_RUNTIME_STATE =
           ["jest", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jest-environment-jsdom", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jotai", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2"],\
-          ["jotai-ssr", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:0.1.1"],\
           ["next", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:15.0.2"],\
           ["next-auth", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:4.24.10"],\
           ["postcss", "npm:8.4.47"],\

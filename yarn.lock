@@ -3251,16 +3251,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jotai-ssr@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "jotai-ssr@npm:0.1.1"
-  peerDependencies:
-    jotai: ">=2.0.0"
-    react: ">=18.0.0"
-  checksum: 10c0/d0d9b4b027fe32bf21b6fe55c01080b294830584a6cf316f3dca3115bea89ad5ad1b3183ec24da7c7dbbe1c902de63216b71ca5e3ed883084ea6fe1dab6839c0
-  languageName: node
-  linkType: hard
-
 "jotai@npm:^2.10.2":
   version: 2.10.2
   resolution: "jotai@npm:2.10.2"
@@ -4536,7 +4526,6 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     jotai: "npm:^2.10.2"
-    jotai-ssr: "npm:^0.1.1"
     next: "npm:^15.0.2"
     next-auth: "npm:^4.24.10"
     postcss: "npm:^8.4.47"
