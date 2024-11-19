@@ -3,6 +3,7 @@ import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query
 import Index from './index'
 import api from '@/utils/api'
 import Loading from './loading'
+import { ThemeStoreProvider } from '@/providers/themeStoreProvider'
 
 export async function serverSide() {
   return await api.get('http://localhost:3001/api/v1/user').then((res) => res.data)
@@ -15,13 +16,14 @@ export default async function Page() {
     queryKey: ['posts'],
     queryFn: serverSide
   })
-  const count = 0
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Suspense fallback={<Loading />}>
-        <Index count={count} />
-      </Suspense>
+      <ThemeStoreProvider>
+        <Suspense fallback={<Loading />}>
+          <Index />
+        </Suspense>
+      </ThemeStoreProvider>
     </HydrationBoundary>
   )
 }

@@ -1,11 +1,9 @@
 'use client'
 
-// QueryClientProvider가 내부적으로 useContext를 사용하기 때문에 'use client'를 맨 위에 추가.
+import React from 'react'
 import { isServer, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { SessionProvider } from 'next-auth/react'
-import { Provider } from 'jotai'
-import React from 'react'
 import { Session } from 'next-auth'
 
 const makeQueryClient = () => {
@@ -36,7 +34,7 @@ function getQueryClient() {
   }
 }
 
-export default function Providers({ children, session }: { children: React.ReactNode; session: Session }) {
+export default function Providers({ children, session }: { children: React.ReactNode; session: Session | null }) {
   // 주의: query client를 초기화할 때 useState를 피하세요.
   //       suspense 경계가 없으면 React가 초기 렌더링 시 클라이언트를
   //       버리기 때문입니다.
@@ -44,11 +42,9 @@ export default function Providers({ children, session }: { children: React.React
 
   return (
     <SessionProvider session={session}>
-      <Provider>
-        <QueryClientProvider client={queryClient}>
-          {children} <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
-      </Provider>
+      <QueryClientProvider client={queryClient}>
+        {children} <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </SessionProvider>
   )
 }

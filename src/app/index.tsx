@@ -3,33 +3,23 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { serverSide } from './page'
-import { useHydrateAtoms } from 'jotai/utils'
-import { useAtom } from 'jotai'
-import countAtom from 'atom/countAtom'
-import darkModeAtom from 'atom/theme'
+import { useThemeStore } from '@/providers/themeStoreProvider'
 
-export default function Index({ count }: { count: number }) {
+export default function Index() {
   const { data } = useQuery({
     queryKey: ['posts'],
     queryFn: () => serverSide()
   })
-  const [counter, setCounter] = useAtom(countAtom)
-  const [mode, setMode] = useAtom(darkModeAtom)
-  useHydrateAtoms([[countAtom, count]])
-
+  const { theme, setTheme } = useThemeStore((state) => state)
   return (
     <div>
-      <div className="w-full  text-center text-[20px] flex flex-row justify-center gap-[40px]">
-        <div>{counter}</div>
-
-        <div>{mode ? 'dark' : 'light'}</div>
+      <div className={'size-[500px] flex flex-col items-center justify-center'}>
+        <div>{theme}</div>
+        <div>
+          <button onClick={() => setTheme('light')}>light</button>
+          <button onClick={() => setTheme('dark')}>dark</button>
+        </div>
       </div>
-      <button className="px-[20px] py-[20px]" onClick={() => setCounter(counter + 1)}>
-        +
-      </button>
-      <button className="px-[20px] py-[20px]" onClick={() => setMode(!mode)}>
-        {mode ? 'dark' : 'light'}
-      </button>
     </div>
   )
 }
