@@ -6,7 +6,7 @@ import Loading from './loading'
 import { ThemeStoreProvider } from '@/providers/themeStoreProvider'
 
 export async function serverSide() {
-  return await api.get('http://localhost:3001/api/v1/user').then((res) => res.data)
+  return await api('http://localhost:3001/api/v1/user').then((res) => res.data)
 }
 
 export default async function Page() {
