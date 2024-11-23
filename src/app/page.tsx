@@ -1,12 +1,11 @@
 import React, { Suspense } from 'react'
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 import Index from './index'
-import api from '@/utils/api'
+
 import Loading from './loading'
-import { ThemeStoreProvider } from '@/providers/themeStoreProvider'
 
 export async function serverSide() {
-  return await api('http://localhost:3001/api/v1/user').then((res) => res.data)
+  return { posts: [] }
 }
 
 export default async function Page() {
@@ -19,11 +18,9 @@ export default async function Page() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <ThemeStoreProvider>
-        <Suspense fallback={<Loading />}>
-          <Index />
-        </Suspense>
-      </ThemeStoreProvider>
+      <Suspense fallback={<Loading />}>
+        <Index />
+      </Suspense>
     </HydrationBoundary>
   )
 }
