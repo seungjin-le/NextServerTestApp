@@ -16,6 +16,13 @@
   }
 }
 
+
+html {
+  & * {
+    transition: color 0.2s, background 0.2s;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

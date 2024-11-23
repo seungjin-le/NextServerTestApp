@@ -15,7 +15,7 @@ export default async function Page() {
     queryKey: ['posts'],
     queryFn: serverSide
   })
-
+  console.log('page.tsx')
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <Suspense fallback={<Loading />}>

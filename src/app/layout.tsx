@@ -27,6 +27,7 @@ export default async function RootLayout({ children }: { children: ReactNode }):
         <Providers session={session as Session}>
           <div className="flex flex-col bg-blue-500">
             <Header />
+
             <Section>{children}</Section>
             <Footer />
           </div>
