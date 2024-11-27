@@ -4,6 +4,7 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { serverSide } from './page'
 import { setCookie } from 'cookies-next'
+import axios from 'axios'
 
 export default function Index() {
   const { data } = useQuery({
@@ -17,12 +18,18 @@ export default function Index() {
     root.className = `size-full ${theme}`
   }
 
+  const testClick = async () => {
+    const res = await axios.get('/api/v1/user')
+    console.log(res.data)
+  }
+
   return (
     <div>
       <div className={'size-[500px] flex flex-col items-center justify-center'}>
         <div className={'bg-default  flex flex-row items-center gap-[20px]'}>
           <button onClick={() => handleOnClickTheme('light')}>light</button>
           <button onClick={() => handleOnClickTheme('dark')}>dark</button>
+          <button onClick={() => testClick()}>test</button>
         </div>
       </div>
     </div>

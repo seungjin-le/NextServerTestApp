@@ -10,8 +10,8 @@ interface FetchOptions extends RequestInit {
 export default async function serverFetch(url: string): Promise<Response | undefined> {
   const session: any = await getServerSession(authOptions)
   const headers: HeadersInit = {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${session?.accessToken}`
+    'Content-Type': 'application/json'
+    // Authorization: `Bearer ${session?.accessToken}`
   }
 
   const fetchOptions: FetchOptions = {
@@ -19,11 +19,9 @@ export default async function serverFetch(url: string): Promise<Response | undef
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${url}`, fetchOptions)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, fetchOptions)
 
-    if (response.status === 500) throw new Error(`Undefined Error ${response.statusText}`, { cause: response.status })
-
-    if (response.status >= 400) {
+    if (response.status !== 200) {
       const errorData = await response.json()
       const error = new Error(errorData.message, errorData.status)
       throw error // catch 로 빠짐

@@ -3,9 +3,13 @@ import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query
 import Index from './index'
 
 import Loading from './loading'
+import serverFetch from '@/utils/api'
 
 export async function serverSide() {
-  return { posts: [] }
+  const data: Response | undefined = await serverFetch('/api/v1/user')
+  const jsonData = await data?.json()
+  console.log(jsonData)
+  return { posts: jsonData || [] }
 }
 
 export default async function Page() {
@@ -15,7 +19,7 @@ export default async function Page() {
     queryKey: ['posts'],
     queryFn: serverSide
   })
-  console.log('page.tsx')
+
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <Suspense fallback={<Loading />}>

@@ -6,27 +6,25 @@ const nextConfig = {
     // Proxy
     return [
       {
-        source: "/api/v1/:path*/",
-        destination: `${process.env.NEXT_PUBLIC_BASE_URL}/:path*/`,
-      },
-    ];
+        source: '/api/v1/:path*',
+        // destination: `/api/v2/:path*`
+        destination: `/api/v2/user`
+      }
+    ]
   },
   env: {
-    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL
   },
   experimental: {
-
     turbo: {
       rules: {
-        "*.svg": {
-          loaders: ["@svgr/webpack"],
-          as: "*.js",
-        },
-      },
-    },
-  },
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js'
+        }
+      }
+    }
+  }
+}
 
-  trailingSlash: true,
-};
-
-export default nextConfig;
+export default nextConfig
