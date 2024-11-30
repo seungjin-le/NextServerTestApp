@@ -1,20 +1,26 @@
 import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
-  return NextResponse.json({
-    massage: ' Next.js!',
+  const responseData = {
+    message: ' Next.js! v2',
     status: 200,
     data: {
-      name: 'Doe42222',
+      name: '42222',
       email: 'john@doe.com'
     }
-  })
+  }
+
+  return NextResponse.json(responseData)
 }
 
 export async function PATCH(request: Request): Promise<NextResponse> {
-  return NextResponse.json('Hello, Next.js!', {
+  const responseData = {
+    message: ' Next.js! v2',
     status: 200,
-    data: null,
-    message: ''
-  })
+    data: {
+      name: '42222',
+      email: 'john@doe.com'
+    }
+  }
+  return NextResponse.json(responseData)
 }

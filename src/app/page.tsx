@@ -6,10 +6,15 @@ import Loading from './loading'
 import serverFetch from '@/utils/api'
 
 export async function serverSide() {
-  const data: Response | undefined = await serverFetch('/api/v1/user')
-  const jsonData = await data?.json()
-  console.log(jsonData)
-  return { posts: jsonData || [] }
+  try {
+    const data: Response | undefined = await serverFetch('/api/v1/user')
+    const jsonData = await data?.json()
+    console.log(jsonData)
+    return { posts: jsonData || {} }
+  } catch (error) {
+    console.error(error)
+    return { posts: {} }
+  }
 }
 
 export default async function Page() {
@@ -17,7 +22,7 @@ export default async function Page() {
 
   await queryClient.prefetchQuery({
     queryKey: ['posts'],
-    queryFn: serverSide
+    queryFn: () => serverSide()
   })
 
   return (
