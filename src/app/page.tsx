@@ -9,10 +9,9 @@ export async function serverSide() {
   try {
     const data: Response | undefined = await serverFetch('/api/v1/user')
     const jsonData = await data?.json()
-    console.log(jsonData)
+
     return { posts: jsonData || {} }
   } catch (error) {
-    console.error(error)
     return { posts: {} }
   }
 }

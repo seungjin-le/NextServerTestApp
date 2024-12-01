@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-  // return NextResponse.redirect(new URL("/home", request.url));
-  // return NextResponse.next();
   const requestHeaders = new Headers(request.headers)
-  console.log('middleware1')
+
   // Add new request headers
-  requestHeaders.set('x-hello-from-middleware1', '------------- Next?')
+  requestHeaders.set('x-hello-from-middleware1', '------------- 123123123123Next?')
   requestHeaders.set('x-hello-from-middleware2', '------------- Next?')
 
   return NextResponse.next({
@@ -17,5 +15,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: '/api/v1/qwer/qwer'
+  matcher: ['/api/v1/:path*']
 }

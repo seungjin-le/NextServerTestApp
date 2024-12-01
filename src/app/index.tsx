@@ -20,7 +20,6 @@ export default function Index() {
 
   const testClick = async () => {
     const res = await axios.get('/api/v1/user')
-    console.log(res.data)
   }
 
   return (
