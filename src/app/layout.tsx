@@ -9,6 +9,7 @@ import Footer from '../contailer/Footer'
 import { Session } from 'next-auth/core/types'
 import { cookies } from 'next/headers'
 import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies'
+import PageTransition from '@/contailer/PageTransition'
 
 export const metadata = {
   title: 'Home',
@@ -25,13 +26,15 @@ export default async function RootLayout({ children }: { children: ReactNode }):
     <html lang="ko" className={`size-full ${theme}`}>
       <body className="dark:bg-[#262c36] bg-n50 size-full min-h-[100dvh]">
         <Providers session={session as Session}>
-          <div className="flex flex-col size-full">
-            <div className={'flex-1'}>
-              <Header />
-              <Section>{children}</Section>
+          <PageTransition>
+            <div className="flex flex-col size-full">
+              <div className={'flex-1'}>
+                <Header />
+                <Section>{children}</Section>
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
+          </PageTransition>
         </Providers>
       </body>
     </html>

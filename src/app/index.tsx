@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import { serverSide } from './page'
 import { setCookie } from 'cookies-next'
 import axios from 'axios'
+import Link from 'next/link'
 
 export default function Index() {
   const { data } = useQuery({
@@ -30,6 +31,7 @@ export default function Index() {
           <button onClick={() => handleOnClickTheme('dark')}>dark</button>
           <button onClick={() => testClick()}>test</button>
         </div>
+        <Link href="/test">Go to Test</Link>
       </div>
     </div>
   )

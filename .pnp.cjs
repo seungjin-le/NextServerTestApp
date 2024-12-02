@@ -36,6 +36,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.3.12"],\
           ["axios", "npm:1.7.7"],\
           ["cookies-next", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:5.0.2"],\
+          ["framer-motion", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:11.12.0"],\
           ["jest", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jest-environment-jsdom", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jotai", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2"],\
@@ -3218,6 +3219,37 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["framer-motion", [\
+      ["npm:11.12.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/framer-motion-npm-11.12.0-65d89e35cd-10c0.zip/node_modules/framer-motion/",\
+        "packageDependencies": [\
+          ["framer-motion", "npm:11.12.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:11.12.0", {\
+        "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-bbf4af61c6/4/.yarn/berry/cache/framer-motion-npm-11.12.0-65d89e35cd-10c0.zip/node_modules/framer-motion/",\
+        "packageDependencies": [\
+          ["framer-motion", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:11.12.0"],\
+          ["@emotion/is-prop-valid", null],\
+          ["@types/emotion__is-prop-valid", null],\
+          ["@types/react", "npm:18.3.12"],\
+          ["@types/react-dom", null],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:18.3.1"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@emotion/is-prop-valid",\
+          "@types/emotion__is-prop-valid",\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["fs-minipass", [\
       ["npm:2.1.0", {\
         "packageLocation": "../../../.yarn/berry/cache/fs-minipass-npm-2.1.0-501ef87306-10c0.zip/node_modules/fs-minipass/",\
@@ -5835,6 +5867,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.3.12"],\
           ["axios", "npm:1.7.7"],\
           ["cookies-next", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:5.0.2"],\
+          ["framer-motion", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:11.12.0"],\
           ["jest", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jest-environment-jsdom", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:29.7.0"],\
           ["jotai", "virtual:8569d377f7c8554ed296d3e212dccd7ce1eb2e5ce78264520cc32bba7dd63a609352d78508ac09c03b40e40ec21aaa26b5f212a86efa976fe3e732c69c7dbe89#npm:2.10.2"],\
