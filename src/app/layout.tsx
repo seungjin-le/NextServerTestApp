@@ -13,7 +13,7 @@ import PageTransition from '@/contailer/PageTransition'
 
 export const metadata = {
   title: 'Home',
-  description: 'Welcome to Next.js'
+  description: 'Next.js'
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }): Promise<ReactNode> {
