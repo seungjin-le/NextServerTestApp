@@ -1,12 +1,12 @@
 'use client'
 
-import Link from 'next/link'
-
+import { useRouter } from 'next/navigation'
 export default function Index() {
+  const router = useRouter()
   return (
     <div>
       TestPage Link
-      <Link href="/">Go to Home</Link>
+      <button onClick={() => router.push('/')}>Go to Home</button>
     </div>
   )
 }

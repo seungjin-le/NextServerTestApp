@@ -5,14 +5,14 @@ import { useQuery } from '@tanstack/react-query'
 import { serverSide } from './page'
 import { setCookie } from 'cookies-next'
 import axios from 'axios'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function Index() {
   const { data } = useQuery({
     queryKey: ['posts'],
     queryFn: () => serverSide()
   })
-
+  const router = useRouter()
   const handleOnClickTheme: (theme: string) => void = async (theme: string) => {
     await setCookie('theme', theme)
     const root = document.getElementsByTagName('html')[0]
@@ -31,7 +31,7 @@ export default function Index() {
           <button onClick={() => handleOnClickTheme('dark')}>dark</button>
           <button onClick={() => testClick()}>test</button>
         </div>
-        <Link href="/test">Go to Test</Link>
+        <button onClick={() => router.push('/test')}>Go to Test</button>
       </div>
     </div>
   )
