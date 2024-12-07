@@ -5,7 +5,7 @@ import { ReactNode, useEffect, useState } from 'react'
 
 const pageVariants = {
   initial: {
-    opacity: 0
+    opacity: 1
   },
   in: {
     opacity: 1
