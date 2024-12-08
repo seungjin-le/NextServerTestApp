@@ -1,30 +1,25 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ReactNode, useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import { ReactNode } from 'react'
 
-const pageVariants = {
-  initial: {
-    opacity: 1
-  },
-  in: {
-    opacity: 1
-  },
-  out: {
-    opacity: 0
-  }
+const variants = {
+  initial: { opacity: 0, scale: 0.9 },
+  animate: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.9 },
+  transition: { duration: 0.5, ease: 'linear' }
 }
-
-const pageTransition = {
-  type: 'tween',
-  ease: 'anticipate',
-  duration: 0.5
-}
-
 export default function PageTransition({ children }: { children: ReactNode }) {
-  const [mount, setMount] = useState<boolean>(false)
-  useEffect(() => {
-    setMount(true)
-  }, [])
-  return <div className={`${mount ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}>{children}</div>
+  const path = usePathname()
+
+  return (
+    <div className="relative size-full">
+      <AnimatePresence>
+        <motion.div key={path} {...variants} className="absolute size-full left-0 top-0">
+          {children}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  )
 }

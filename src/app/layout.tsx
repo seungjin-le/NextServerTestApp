@@ -25,8 +25,8 @@ export default async function RootLayout({ children }: { children: ReactNode }):
   return (
     <html lang="ko" className={`size-full ${theme}`}>
       <body className="dark:bg-[#262c36] bg-n50 size-full min-h-[100dvh]">
-        <PageTransition>
-          <Providers session={session as Session}>
+        <Providers session={session as Session}>
+          <PageTransition>
             <div className="flex flex-col size-full">
               <div className={'flex-1'}>
                 <Header />
@@ -34,8 +34,8 @@ export default async function RootLayout({ children }: { children: ReactNode }):
               </div>
               <Footer />
             </div>
-          </Providers>
-        </PageTransition>
+          </PageTransition>
+        </Providers>
       </body>
     </html>
   )
