@@ -5,18 +5,17 @@ import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
 
 const variants = {
-  initial: { opacity: 0, scale: 0.9 },
-  animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.9 },
-  transition: { duration: 0.5, ease: 'linear' }
+  animate: { opacity: 1, blur: 0 },
+  exit: { opacity: 0, blur: -100 },
+  transition: { duration: 0.5 }
 }
 export default function PageTransition({ children }: { children: ReactNode }) {
   const path = usePathname()
 
   return (
     <div className="relative size-full">
-      <AnimatePresence>
-        <motion.div key={path} {...variants} className="absolute size-full left-0 top-0">
+      <AnimatePresence mode="sync" initial={false}>
+        <motion.div key={path} {...variants}>
           {children}
         </motion.div>
       </AnimatePresence>
