@@ -28,7 +28,7 @@ export default async function RootLayout({ children }: { children: ReactNode }):
         <Providers session={session as Session}>
           <PageTransition>
             <div className="flex flex-col size-full">
-              <div className={'flex-1'}>
+              <div className={'flex-1 flex flex-col items-center justify-between'}>
                 <Header />
                 <Section>{children}</Section>
               </div>
