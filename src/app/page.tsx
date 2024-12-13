@@ -1,8 +1,6 @@
 import React, { Suspense } from 'react'
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 import Index from './index'
-
-import Loading from './loading'
 import serverFetch from '@/utils/api'
 
 export async function serverSide() {
@@ -26,10 +24,8 @@ export default async function Page() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Suspense fallback={<Loading />}>
-        <Index />
-        <div className={'fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[44px] '}>sdjfhasdklfjh</div>
-      </Suspense>
+      <Index />
+      <div className={'fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[44px] '}>sdjfhasdklfjh</div>
     </HydrationBoundary>
   )
 }
