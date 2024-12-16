@@ -3,20 +3,24 @@ import React, { ReactNode } from 'react'
 import { getServerSession } from 'next-auth'
 import Providers from '@/providers/providers'
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
-import Section from '@/contailer/Section'
-import Header from '@/contailer/Header'
-import Footer from '@/contailer/Footer'
+import Section from '@/container/Section'
+import Header from '@/container/Header'
+import Footer from '@/container/Footer'
 import { Session } from 'next-auth/core/types'
 import { cookies } from 'next/headers'
 import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies'
-import PageTransition from '@/contailer/PageTransition'
+import PageTransition from '@/container/PageTransition'
+
+interface RootLayoutProps {
+  children: ReactNode
+}
 
 export const metadata = {
   title: 'Home',
   description: 'Next.js'
 }
 
-export default async function RootLayout({ children }: { children: ReactNode }): Promise<ReactNode> {
+export default async function RootLayout({ children }: RootLayoutProps): Promise<ReactNode> {
   const session: Session | null = await getServerSession(authOptions)
 
   const cookieStore: ReadonlyRequestCookies = await cookies()
