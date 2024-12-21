@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { ReactNode, Suspense } from 'react'
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 import Index from './index'
 import serverFetch from '@/utils/api'
@@ -14,8 +14,8 @@ export async function serverSide() {
   }
 }
 
-export default async function Page() {
-  const queryClient = new QueryClient()
+export default async function Page(): Promise<ReactNode> {
+  const queryClient = new QueryClient()  
 
   await queryClient.prefetchQuery({
     queryKey: ['posts'],
@@ -25,7 +25,7 @@ export default async function Page() {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <Index />
-      <div className={'fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[44px] '}>sdjfhasdklfjh</div>
     </HydrationBoundary>
   )
 }
+  
