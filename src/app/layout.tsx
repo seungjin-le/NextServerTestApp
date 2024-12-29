@@ -9,7 +9,7 @@ import Footer from '@/container/Footer'
 import { Session } from 'next-auth/core/types'
 import { cookies } from 'next/headers'
 import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies'
-import PageTransition from '@/container/PageTransition'
+import PageTransition from '@/providers/PageTransition'
 
 interface RootLayoutProps {
   children: ReactNode

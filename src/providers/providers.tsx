@@ -36,8 +36,8 @@ function getQueryClient() {
 
 export default function Providers({ children, session }: { children: React.ReactNode; session: Session | null }) {
   // 주의: query client를 초기화할 때 useState를 피하세요.
-  //       suspense 경계가 없으면 React가 초기 렌더링 시 클라이언트를
-  //       버리기 때문입니다.
+  // suspense 경계가 없으면 React가 초기 렌더링 시 클라이언트를
+  // 버리기 때문입니다.
   const queryClient = getQueryClient()
 
   return (
