@@ -11,6 +11,10 @@ export type ThemeActions = {
 
 export type ThemeStore = ThemeState & ThemeActions
 
+/**
+ * 테마
+ *
+ * */
 export const defaultInitState: ThemeState = {
   theme: 'light'
 }
