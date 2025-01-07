@@ -1,20 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html {
-  & * {
-    transition:
-      color 0.2s,
-      background 0.2s;
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
+@utility bg-default {
+  @apply bg-[#ddd] dark:bg-[#fff];
+}
+
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .bg-default {
-    @apply bg-[#ddd] dark:bg-[#fff];
+  html {
+    & * {
+      transition:
+        color 0.2s,
+        background 0.2s;
+    }
   }
 }
