@@ -11,13 +11,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+ 
 }
 
 @utility bg-default {
@@ -25,11 +19,10 @@
 }
 
 @layer utilities {
-  html {
-    & * {
-      transition:
-        color 0.2s,
-        background 0.2s;
-    }
+  html,
+  body {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
   }
 }
