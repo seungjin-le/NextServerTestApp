@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   return (
@@ -8,4 +9,11 @@ export default function Page() {
       <Link href="/test2">go To Test2</Link>
     </div>
   );
+}
+
+export async function getServerSideProps({ req, res }) {
+  console.log(req);
+  return {
+    props: {},
+  };
 }
