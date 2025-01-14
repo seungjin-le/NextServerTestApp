@@ -10,6 +10,7 @@ import { Session } from 'next-auth/core/types'
 import { cookies } from 'next/headers'
 import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies'
 import PageTransition from '@/providers/PageTransition'
+import useServerCookie from '../../stores/useServerCookie'
 
 interface RootLayoutProps {
   children: ReactNode
@@ -26,6 +27,8 @@ export default async function RootLayout({ children }: RootLayoutProps): Promise
   const cookieStore: ReadonlyRequestCookies = await cookies()
   const theme: string | undefined = cookieStore.get('theme')?.value || 'light'
 
+  const setCookie = useServerCookie()
+  setCookie('theme', theme)
   return (
     <html lang="ko" className={`size-full ${theme}`}>
       <body className="dark:bg-[#262c36] bg-n50 size-full min-h-[100dvh] flex flex-col">
