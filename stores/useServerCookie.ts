@@ -16,8 +16,9 @@ export type CookieOptions = {
 export async function setServerCookie(name: string, value: string, options?: CookieOptions) {
   'use server'
 
-  const cookieStore = cookies()
-  cookieStore.set(name, value, {
+  const cookieStore = await cookies()
+
+   cookieStore.set(name, value, {
     ...options,
     path: options?.path ?? '/',
     secure: options?.secure ?? process.env.NODE_ENV === 'production',
@@ -30,13 +31,13 @@ export async function setServerCookie(name: string, value: string, options?: Coo
 export async function deleteServerCookie(name: string) {
   'use server'
 
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   cookieStore.delete(name)
   revalidatePath('/')
 }
 
 // Read-only cookie access
-export function getServerCookie(name: string): string | undefined {
-  const cookieStore = cookies()
+export  async function getServerCookie(name: string):Promise<string | undefined> {
+  const cookieStore = await cookies()
   return cookieStore.get(name)?.value
 }
