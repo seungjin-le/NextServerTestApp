@@ -19,12 +19,12 @@ const cookieOption: CookieOptions = {
   sameSite: 'lax'
 }
 
-export async function setServerCookie(name: string, value: string) {
+export async function setCookie(name: string, value: string) {
   const cookie = await cookies()
   cookie.set(name, value, cookieOption)
 }
 
-export async function deleteServerCookie(name: string) {
+export async function clearCookie(name: string) {
   const cookieStore = await cookies()
   cookieStore.delete(name)
 }
