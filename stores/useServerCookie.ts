@@ -29,4 +29,8 @@ export async function clearCookie(name: string) {
   cookieStore.delete(name)
 }
 
+/*
+* @param {string} 쿠키 이름
+* @return: cookie value
+* */
 export const getServerCookie = async (name: string): Promise<string | undefined> => (await cookies()).get(name)?.value
