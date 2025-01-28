@@ -18,7 +18,7 @@ interface RootLayoutProps {
 
 export const metadata = {
   title: 'Home',
-  description: 'Next.js'
+  description: 'Next.js Test App'
 }
 
 async function initializeUserCookie() {

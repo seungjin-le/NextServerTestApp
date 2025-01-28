@@ -1,4 +1,3 @@
-// React 핵심 및 타입 관련 임포트
 import React, { ReactNode, Suspense } from 'react'
 // 서버 사이드 데이터 페칭 및 하이드레이션을 위한 React Query 임포트
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
