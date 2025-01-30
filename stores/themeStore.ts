@@ -1,6 +1,10 @@
 import { createStore } from 'zustand/vanilla'
 import { persist, createJSONStorage } from 'zustand/middleware'
 
+/**
+ * 테마 색상
+ * theme {string} - light, dark
+ */
 export type ThemeState = {
   theme: string
 }
@@ -13,7 +17,6 @@ export type ThemeStore = ThemeState & ThemeActions
 
 /**
  * 테마
- *
  * */
 export const defaultInitState: ThemeState = {
   theme: 'light'
