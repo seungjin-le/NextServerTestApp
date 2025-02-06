@@ -1,1 +1,1 @@
-## Next Test App
+## Next.js Test App
